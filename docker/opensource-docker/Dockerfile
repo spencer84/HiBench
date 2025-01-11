@@ -43,6 +43,19 @@ RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-2.6.4/hadoop-2.6.4
 RUN tar xzf hadoop-*.tar.gz -C /usr/local/
 RUN rm -f hadoop-*.tar.gz 
 
+#==============================
+# Python3 Installation
+#==============================
+# install python
+ENV PYTHON3_VERSION                  3.10
+RUN apt-get install -y python${PYTHON3_VERSION} python${PYTHON3_VERSION}-dev
+RUN curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py \
+    && python3.10 get-pip.py \
+    && rm get-pip.py
+RUN python3.10 -m pip install typing
+RUN python3.10 -m pip install disutils
+RUN alias python='python2.7'
+
 
 #==============================
 # SPARK Installation
