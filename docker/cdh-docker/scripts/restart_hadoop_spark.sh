@@ -44,14 +44,14 @@ service hadoop-mapreduce-historyserver restart
 hdfs dfs -mkdir -p /user/hdfs
 hdfs dfs -chown hdfs:hdfs /user/hdfs
 
-# start spark-history-server
-hdfs dfs -mkdir -p /user/spark/applicationHistory 
-hdfs dfs -chown -R spark:spark /user/spark
-hdfs dfs -chmod 1777 /user/spark/applicationHistory
+# # start spark-history-server
+# hdfs dfs -mkdir -p /user/spark/applicationHistory 
+# hdfs dfs -chown -R spark:spark /user/spark
+# hdfs dfs -chmod 1777 /user/spark/applicationHistory
 
-service spark-history-server restart
-${SPARK_HOME}/sbin/stop-all.sh
-${SPARK_HOME}/sbin/start-all.sh
+# service spark-history-server restart
+# ${SPARK_HOME}/sbin/stop-all.sh
+# ${SPARK_HOME}/sbin/start-all.sh
 
 echo "#======================================================================#"
 echo "       Now you can run all workload by:                                 "

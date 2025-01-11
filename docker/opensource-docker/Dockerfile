@@ -39,24 +39,24 @@ RUN export YARN_HOME=$HADOOP_INSTALL
 RUN export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_INSTALL/lib/native
 RUN export HADOOP_OPTS="-Djava.library.path=$HADOOP_INSTALL/lib"
 
-RUN wget http://apache.mirrors.lucidnetworks.net/hadoop/common/hadoop-${HADOOP_VERSION_DETAIL}/hadoop-${HADOOP_VERSION_DETAIL}.tar.gz
+RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-2.6.4/hadoop-2.6.4.tar.gz
 RUN tar xzf hadoop-*.tar.gz -C /usr/local/
 RUN rm -f hadoop-*.tar.gz 
 
 
-#==============================
-# SPARK Installation
-#==============================
+# #==============================
+# # SPARK Installation
+# #==============================
 
-# spark home environments
-ENV SPARK_HOME /usr/local/spark-${SPARK_VERSION_DETAIL}
-ENV SPARK_MASTER_IP localhost
+# # spark home environments
+# ENV SPARK_HOME /usr/local/spark-${SPARK_VERSION_DETAIL}
+# ENV SPARK_MASTER_IP localhost
 
-# download spark
-RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION_DETAIL}-bin-hadoop${HADOOP_FOR_SPARK_VERSION}.tgz 
-RUN tar xzf spark-*.tgz -C /usr/local
-RUN mv /usr/local/spark-* ${SPARK_HOME}
-RUN rm -f spark-*.tgz 
+# # download spark
+# RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION_DETAIL}-bin-hadoop${HADOOP_FOR_SPARK_VERSION}.tgz 
+# RUN tar xzf spark-*.tgz -C /usr/local
+# RUN mv /usr/local/spark-* ${SPARK_HOME}
+# RUN rm -f spark-*.tgz 
 
 # Copy updated config files
 COPY conf/core-site.xml ${HADOOP_CONF_DIR}/

@@ -24,7 +24,7 @@ function build-base() {
 echo "============================================"
 echo "   Start building hibench-base image...     "
 echo "============================================"
-bash ${CUR_DIR}/gen_base_dockerfile.sh
+#bash ${CUR_DIR}/gen_base_dockerfile.sh
 sudo docker build -t hibench-base ${HOME_DIR}/base/
 }
 
