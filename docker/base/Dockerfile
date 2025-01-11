@@ -29,6 +29,7 @@ FROM ubuntu:22.04
 #   scala at least 2.10   #
 #=========================#
 ENV PYTHON_VERSION                   2.7
+ENV PYTHON3_VERSION                  3.10
 ENV JDK_VERSION                      8
 ENV MAVEN_VERSION                    3.0.5
 
@@ -95,6 +96,7 @@ RUN echo "    UserKnownHostsFile=/dev/null                 " >> /etc/ssh/ssh_con
 
 # install python
 RUN apt-get install -y python${PYTHON_VERSION} python${PYTHON_VERSION}-dev
+RUN apt-get install -y python${PYTHON3_VERSION} python${PYTHON3_VERSION}-dev 
 
 #==============================
 # Java Installation
