@@ -41,7 +41,7 @@ ${HADOOP_HOME}/sbin/start-dfs.sh
 ${HADOOP_HOME}/sbin/start-yarn.sh
 
 # restart spark
-${SPARK_HOME}/sbin/start-all.sh
+# ${SPARK_HOME}/sbin/start-all.sh
 
 echo "#======================================================================#"
 echo "       Now you can run all workload by:                                 "
