@@ -44,10 +44,10 @@ RUN tar xzf hadoop-*.tar.gz -C /usr/local/
 RUN rm -f hadoop-*.tar.gz 
 
 
-# #==============================
-# # SPARK Installation
-# #==============================
-
+#==============================
+# SPARK Installation
+#==============================
+RUN python3.10 -m pip install pyspark
 # # spark home environments
 # ENV SPARK_HOME /usr/local/spark-${SPARK_VERSION_DETAIL}
 # ENV SPARK_MASTER_IP localhost
@@ -57,6 +57,16 @@ RUN rm -f hadoop-*.tar.gz
 # RUN tar xzf spark-*.tgz -C /usr/local
 # RUN mv /usr/local/spark-* ${SPARK_HOME}
 # RUN rm -f spark-*.tgz 
+
+#==============================
+# DASK Installation
+#==============================
+ RUN python3 -m pip install dask distributed --upgrade
+
+#==============================
+# RAY Installation
+#==============================
+RUN python3 -m pip install -U "ray"
 
 # Copy updated config files
 COPY conf/core-site.xml ${HADOOP_CONF_DIR}/
