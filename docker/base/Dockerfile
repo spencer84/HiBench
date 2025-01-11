@@ -138,8 +138,8 @@ ENV PATH $PATH:/usr/local/apache-maven/bin
 ENV HIBENCH_HOME /root/HiBench
 
 # download right version of HiBench
-RUN cd /root/
-RUN git clone https://github.com/spencer84/HiBench/
+RUN cd /root/ && git clone https://github.com/spencer84/HiBench/
+
 # RUN unzip HiBench-6.0.zip -d /root/
 # RUN mv /root/HiBench-HiBench-6.0 ${HIBENCH_HOME}
 # RUN rm -f HiBench-6.0.zip
