@@ -95,8 +95,8 @@ RUN echo "    UserKnownHostsFile=/dev/null                 " >> /etc/ssh/ssh_con
 #==============================
 
 # install python
-RUN apt-get install -y python${PYTHON_VERSION} python${PYTHON_VERSION}-dev
-RUN apt-get install -y python${PYTHON3_VERSION} python${PYTHON3_VERSION}-dev 
+# RUN apt-get install -y python${PYTHON_VERSION} python${PYTHON_VERSION}-dev
+# RUN apt-get install -y python${PYTHON3_VERSION} python${PYTHON3_VERSION}-dev 
 
 #==============================
 # Java Installation
