@@ -143,9 +143,9 @@ RUN cd /root/ && git clone https://github.com/spencer84/HiBench/
 # RUN unzip HiBench-6.0.zip -d /root/
 # RUN mv /root/HiBench-HiBench-6.0 ${HIBENCH_HOME}
 # RUN rm -f HiBench-6.0.zip
-COPY conf/spark.conf ${HIBENCH_HOME}/conf/
-COPY conf/hadoop.conf ${HIBENCH_HOME}/conf/
-COPY conf/hibench.conf ${HIBENCH_HOME}/conf/
+# COPY conf/spark.conf ${HIBENCH_HOME}/conf/
+# COPY conf/hadoop.conf ${HIBENCH_HOME}/conf/
+# COPY conf/hibench.conf ${HIBENCH_HOME}/conf/
 
 # start building HiBench
 RUN apt-get update && apt-get install -y thrift-compiler
