@@ -49,6 +49,7 @@ RUN rm -f hadoop-*.tar.gz
 # install python
 ENV PYTHON3_VERSION                  3.10
 RUN apt-get install -y python${PYTHON3_VERSION} python${PYTHON3_VERSION}-dev
+RUN apt-get python2
 RUN curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py \
     && python3.10 get-pip.py \
     && rm get-pip.py
