@@ -68,7 +68,8 @@ RUN \
   apt-get -y upgrade && \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
-  apt-get install -y git wget curl man unzip vim-tiny bc 
+  apt-get install -y git wget curl man unzip vim-tiny bc \
+  apt-get install nano
 
 # install ssh server
 RUN \
